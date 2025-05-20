@@ -38,7 +38,7 @@ Make sure that the docker is up and running. Then
     ```
 - Run Test
     ```
-    go test ./...
+    go test -v ./...
     ```
 - Run Swag
     ```bash
@@ -71,10 +71,11 @@ The application will run on `http://localhost:9080` port
     
     From the root of the project, run
     ```
-    go test ./...
+    go test -v ./...
     ```
 2. Using Swagger api docs runs on [http://localhost:9080/swagger/index.html](http://localhost:9080/swagger/index.html)
     Use the swagger docs to test the endpoints.
+
 3. Using Curl
     - To add a receipt
         ```
