@@ -18,7 +18,7 @@ The application needs following installed.
 
 ### Usage: To Run the application
 
-#### 1. Use docker
+#### Use docker
 Make sure that the docker is up and running. Then
 
 - Build
@@ -28,39 +28,6 @@ Make sure that the docker is up and running. Then
 - Run
     ```bash
     docker compose up
-    ```
-
-#### 2. Use Go
-
-- Install dependency
-    ``` bash
-    go mod download
-    ```
-- Run Test
-    ```
-    go test -v ./...
-    ```
-- Run Swag
-    ```bash
-    swag init -g cmd/server/main.go --parseDependency --parseInternal
-    ```
-- Run Server
-    ```bash
-    air
-    ```
-    or
-    ```bash
-    go run cmd/server/main.go
-    ```
-
-#### 3. Makefile
-- Run test, init swagger and then build
-    ```bash
-    make all
-    ```
-- Run Server
-    ```bash
-    make run
     ```
 
 ### Usage: To Test the endpoints
