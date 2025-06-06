@@ -58,11 +58,15 @@ func (rs *ReceiptStore) Delete(id string) (string, error) {
 }
 
 func (rs *ReceiptStore) SetPoints(id string, points int) (string, error) {
+	rs.mu.Lock()
+	defer rs.mu.Unlock()
 	rs.receiptsPoint[id] = points
 	return id, nil
 }
 
 func (rs *ReceiptStore) GetPoints(id string) (int, error) {
+	rs.mu.RLock()
+	defer rs.mu.RUnlock()
 	points, exists := rs.receiptsPoint[id]
 	if exists {
 		return points, nil
