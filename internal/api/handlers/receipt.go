@@ -47,7 +47,7 @@ func (h *ReceiptHandler) ProcessReceipt(w http.ResponseWriter, r *http.Request) 
 
 	log.Println("ReceiptHandler::ProcessReceipt: receipt processed.")
 	response := models.ReceiptResult{Id: id}
-	w.Header().Set("Content-Type", "applicaiton/json")
+	w.Header().Set("Content-Type", "application/json")
 	err = json.NewEncoder(w).Encode(response)
 	if err != nil {
 		log.Printf("ReceiptHandler::ProcessReceipt: error Encoding the reponse: %v\n", err)
