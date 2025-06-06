@@ -52,7 +52,7 @@ func (rs *ReceiptStore) Get(id string) (models.Receipt, error) {
 // Delete the receipt with the id from the ReceiptStore
 func (rs *ReceiptStore) Delete(id string) (string, error) {
 	rs.mu.Lock()
-	defer rs.mu.Lock()
+	defer rs.mu.Unlock()
 	delete(rs.receipts, id)
 	return id, nil
 }
