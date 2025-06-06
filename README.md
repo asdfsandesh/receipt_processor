@@ -18,7 +18,7 @@ The application needs following installed.
 
 ### Usage: To Run the application
 
-#### 1. Use docker
+#### Use docker
 Make sure that the docker is up and running. Then
 
 - Build
@@ -30,39 +30,6 @@ Make sure that the docker is up and running. Then
     docker compose up
     ```
 
-#### 2. Use Go
-
-- Install dependency
-    ``` bash
-    go mod download
-    ```
-- Run Test
-    ```
-    go test ./...
-    ```
-- Run Swag
-    ```bash
-    swag init -g cmd/server/main.go --parseDependency --parseInternal
-    ```
-- Run Server
-    ```bash
-    air
-    ```
-    or
-    ```bash
-    go run cmd/server/main.go
-    ```
-
-#### 3. Makefile
-- Run test, init swagger and then build
-    ```bash
-    make all
-    ```
-- Run Server
-    ```bash
-    make run
-    ```
-
 ### Usage: To Test the endpoints
 
 The application will run on `http://localhost:9080` port
@@ -71,10 +38,11 @@ The application will run on `http://localhost:9080` port
     
     From the root of the project, run
     ```
-    go test ./...
+    go test -v ./...
     ```
 2. Using Swagger api docs runs on [http://localhost:9080/swagger/index.html](http://localhost:9080/swagger/index.html)
     Use the swagger docs to test the endpoints.
+
 3. Using Curl
     - To add a receipt
         ```
